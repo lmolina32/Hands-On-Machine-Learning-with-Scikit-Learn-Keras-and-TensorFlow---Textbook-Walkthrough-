@@ -1,2 +1,9 @@
 # Hands-On-Machine-Learning-with-Scikit-Learn-Keras-and-TensorFlow---Textbook-Walkthrough-
-Reading and following along in the textbook, Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow. 
+
+This repo contains my personal notes, exercises and projects from working through 
+**_Hands-on Machine Learning with Scikit-Learn, Kerass and TensorFlow_** by Aurelien Geron 
+
+The goal of this repo is to:
+- Improve my understanding on core ML concepts 
+- Practice implementation of models 
+- Document insights and helpful tips I learn along the way 
