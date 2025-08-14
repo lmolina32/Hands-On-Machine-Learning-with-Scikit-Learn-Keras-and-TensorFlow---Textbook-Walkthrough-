@@ -62,3 +62,46 @@ NOTE: there is a trade-off between precision and recall and depending on the cla
 
 ### The Precision/Recall Trade-Off 
 
+**decision function - in layman terms computes the confidence score it has for the classification it's making on a specific item** 
+
+First understand SGDClassifer 
+computes score based on decision features -> if score falls in threshold -> add to positive class otherwise goes to negative. 
+
+From the notebook we know that the threshold can impact the recall and precision. In the notebook if the threshold is higher then we get a lot of false negatives decreasing the recall accuracy. 
+
+## ROC Curve (receiver operating characteristics) 
+
+This curve plots the true positive rate (recall) versus the false positive rate. 
+
+FPR (fall-out)= 1 - true negative rate 
+TNR - true negative rate - specificity 
+
+ROC = sensitivity (recall) versus 1 - specificity  
+
+**ROC and PR are very similar, you should go with PR when the positive class is rare or when you care about the false postiive
+
+
+## Multiclass classification 
+
+Some scikit-learn classifiers that handle multiple classification are LogisticRegression, RandomForestClassifier and GaussianNB 
+
+The Stochastic gradient descent from the last section is strictly binary classifier. But, you can built up Multiclass classifiers with creating a system. (e.g train 10 classifiers to classify 0-9 digits). From there it would compute the decision score and then compare it to the closest Classifier. This is OvR (one verses the rest) or OvA (one verses all)
+
+Another approach  is OvO (one versus one), this is training a pair on each digit, one distinguishes 0 and 1, 0 and 2, 1 and 2, etc. This trains N X (N-1)/2 classifiers but only trains on the subset of the training data (e.g classifier would train only on images of 0 and 1). 
+
+## Error Analysis 
+
+* 1st look at confusion matrix, first use cross_val_predict(), then run it on confusion_matrix() and plot the results to see the errors. 
+
+* once you have the confusion matrix plotted you can quickly see what labels are being misclassified and which label they are being misclassified too. Additionally, you can play around with the plot to only see the errors and the percentages (e.g exclude the correct predictions). This allows you to see where your classifier my be going wrong and points were you could fix it 
+
+- For error fixing, you can focus on gather more data to allow your classifier to train on more data. This could be a great time to introduce new data on specific label that looks similar to another to build a better classifier. Additionally, you can engineer new features like focusing on certain parts of the images to improve classification. Lastly, you can just analyze individual errors to improve your classifier gradually. 
+
+## Multilabel classification 
+
+Not every classifier we make we will want to make predictions and produce one label. Sometimes we want it to produce multiple labels for a single image or item. A quick example would be face recognition where we would want to label each person in an image rather than just one. 
+
+## Multioutput classification 
+
+Generalization of multilabel classification where each outputs can be associated to multiple classes (e.g contain multiple values) 
+
