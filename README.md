@@ -13,8 +13,8 @@ The goal of this repo is to:
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/<your-username>/<your-repo-name>.git
-   cd <your-repo-name>
+   git clone https://github.com/lmolina32/Hands-On-Machine-Learning-with-Scikit-Learn-Keras-and-TensorFlow---Textbook-Walkthrough-.git 
+   cd <into-cloned-directory>
    ```
 2. **Create and Activate Python virtual environment**  
     ```bash 
